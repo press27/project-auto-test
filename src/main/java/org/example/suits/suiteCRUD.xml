@@ -5,6 +5,5 @@
         <classes>
             <class name="org.example.training.TestCRUD"/>
         </classes>
-
     </test>
 </suite>
