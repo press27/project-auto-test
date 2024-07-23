@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="SuiteCRUD" verbose="1">
+    <test name="CRUD">
+        <classes>
+            <class name="org.example.training.TestCRUD"/>
+        </classes>
+    </test>
+</suite>
