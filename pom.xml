@@ -36,12 +36,12 @@
       <version>3.3.0</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.9.1</version>
-    </dependency>
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>io.github.bonigarcia</groupId>-->
+<!--      <artifactId>webdrivermanager</artifactId>-->
+<!--      <version>5.9.1</version>-->
+<!--    </dependency>-->
 
   </dependencies>
 
