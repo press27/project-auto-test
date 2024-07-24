@@ -19,7 +19,7 @@ public class HomePage extends BasePage {
         TEXT_INPUT("Text Input"),
         CLICK("Click");
 
-        String linkValue;
+        final String linkValue;
 
         Links(String linkValue) {
             this.linkValue = linkValue;

@@ -11,16 +11,16 @@ import java.util.Properties;
 
 public class BaseTest {
 
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
-    @BeforeClass
-    public void setUp(){
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
+    public static WebDriver setUp(){
         if(driver == null) {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
             driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.get(getFromProperties("homeUrl"));
         }
-        driver.manage().window().maximize();
-        driver.get(getFromProperties("homeUrl"));
+        return driver;
     }
 
     @AfterClass
@@ -28,7 +28,7 @@ public class BaseTest {
         driver.quit();
     }
 
-    public String getFromProperties(String propertyKey){
+    public static String getFromProperties(String propertyKey){
         try {
             Properties prop = new Properties();
             FileInputStream input = new FileInputStream("src/main/resources/application.properties");
