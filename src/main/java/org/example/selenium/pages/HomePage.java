@@ -1,6 +1,5 @@
 package org.example.selenium.pages;
 
-import com.google.common.collect.Table;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,7 +18,8 @@ public class HomePage extends BasePage {
     public enum Links{
         TEXT_INPUT("Text Input"),
         CLICK("Click"),
-        DYNAMIC_TABLE("Dynamic Table");
+        DYNAMIC_TABLE("Dynamic Table"),
+        MOUSE_OVER("Mouse Over");
 
 
         final String linkValue;

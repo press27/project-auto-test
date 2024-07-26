@@ -3,6 +3,7 @@ package org.example.selenium.tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.selenium.pages.DynamicTablePage;
 import org.example.selenium.pages.HomePage;
+import org.example.selenium.pages.MouseOverPage;
 import org.example.selenium.pages.TextInputPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,7 @@ public class BaseTest {
     protected HomePage homePage = new HomePage(setUp());
     protected TextInputPage textInputPage = new TextInputPage(setUp());
     protected DynamicTablePage dynamicTablePage = new DynamicTablePage(setUp());
+    protected MouseOverPage mouseOverPage = new MouseOverPage(setUp());
 
     private WebDriver setUp() {
         WebDriverManager.chromedriver().setup();
