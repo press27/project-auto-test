@@ -8,9 +8,9 @@ import java.util.List;
 
 public class DynamicTablePage extends BasePage{
 
-    private By expectedValue = By.xpath("//p[@class='bg-warning']");
-    private By columnHeaders = By.xpath("//span[@role='columnheader']");
-    private By chromeRow = By.xpath("//div//span[text()='Chrome']/following-sibling::span");
+    private final By expectedValue = By.xpath("//p[@class='bg-warning']");
+    private final By columnHeaders = By.xpath("//span[@role='columnheader']");
+    private final By chromeRow = By.xpath("//div//span[text()='Chrome']/following-sibling::span");
 
     public DynamicTablePage(WebDriver driver) {
         super(driver);

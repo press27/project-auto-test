@@ -19,7 +19,8 @@ public class HomePage extends BasePage {
         TEXT_INPUT("Text Input"),
         CLICK("Click"),
         DYNAMIC_TABLE("Dynamic Table"),
-        MOUSE_OVER("Mouse Over");
+        MOUSE_OVER("Mouse Over"),
+        ALERTS("Alerts");
 
 
         final String linkValue;
