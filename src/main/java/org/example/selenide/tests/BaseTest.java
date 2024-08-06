@@ -2,7 +2,7 @@ package org.example.selenide.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.example.selenide.pages.*;
 import org.testng.annotations.*;
 
 import java.io.FileInputStream;
@@ -11,13 +11,20 @@ import java.util.Properties;
 
 public abstract class BaseTest {
 
+    protected HomePage homePage = new HomePage();
+    protected TextInputPage textInputPage = new TextInputPage();
+    protected DynamicTablePage dynamicTablePage = new DynamicTablePage();
+    protected MouseOverPage mouseOverPage = new MouseOverPage();
+    protected FramesPage framesPage = new FramesPage();
+    protected AlertsPage alertsPage = new AlertsPage();
+
     private void setUp(){
         if(!Configuration.webdriverLogsEnabled){
-            WebDriverManager.chromedriver().setup();
             Configuration.browser = "chrome";
             Configuration.webdriverLogsEnabled = true;
             Configuration.browserSize = "1920x1080";
             Configuration.headless = false;
+            //Selenide.open(getFromProperties("homeUrl"));
         }
     }
 
@@ -27,13 +34,13 @@ public abstract class BaseTest {
         setUp();
     }
 
-    @AfterSuite
-    public void tearDown(){
-        System.out.println("tearDown");
-        Selenide.closeWebDriver();
-    }
+//    @AfterSuite
+//    public void tearDown(){
+//        System.out.println("tearDown");
+//        Selenide.closeWebDriver();
+//    }
 
-    @BeforeClass
+    @BeforeTest
     public void openHomePage(){
         System.out.println("Opening home page");
         Selenide.open(getFromProperties("homeUrl"));

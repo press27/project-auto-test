@@ -1,14 +1,10 @@
 package org.example.selenide.tests;
 
 import org.example.selenide.pages.HomePage;
-import org.example.selenide.pages.TextInputPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TextInputTest extends BaseTest {
-
-    HomePage homePage = new HomePage();
-    TextInputPage textInputPage = new TextInputPage();
 
     @Test
     public void testTextInput(){

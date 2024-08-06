@@ -1,14 +1,10 @@
 package org.example.selenide.tests;
 
 import org.example.selenide.pages.HomePage;
-import org.example.selenide.pages.MouseOverPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class MouseOverTest extends BaseTest{
-
-    HomePage homePage = new HomePage();
-    MouseOverPage mouseOverPage = new MouseOverPage();
 
     @Test
     public void testMouseOver() {
