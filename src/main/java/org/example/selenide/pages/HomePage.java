@@ -15,7 +15,8 @@ public class HomePage {
         CLICK("Click"),
         DYNAMIC_TABLE("Dynamic Table"),
         MOUSE_OVER("Mouse Over"),
-        ALERTS("Alerts");
+        ALERTS("Alerts"),
+        FILE_UPLOAD("File Upload");
 
 
         final String linkValue;

@@ -2,6 +2,7 @@ package org.example.selenide.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import org.example.selenide.pages.*;
 import org.testng.annotations.*;
 
@@ -17,15 +18,16 @@ public abstract class BaseTest {
     protected MouseOverPage mouseOverPage = new MouseOverPage();
     protected FramesPage framesPage = new FramesPage();
     protected AlertsPage alertsPage = new AlertsPage();
+    protected FileUploadPage fileUploadPage = new FileUploadPage();
 
     private void setUp(){
-        if(!Configuration.webdriverLogsEnabled){
+        //if(!Configuration.webdriverLogsEnabled){
             Configuration.browser = "chrome";
-            Configuration.webdriverLogsEnabled = true;
-            Configuration.browserSize = "1920x1080";
+            //Configuration.webdriverLogsEnabled = true;
+            //Configuration.browserSize = "1920x1080";
             Configuration.headless = false;
             //Selenide.open(getFromProperties("homeUrl"));
-        }
+        //}
     }
 
     @BeforeSuite
@@ -44,6 +46,7 @@ public abstract class BaseTest {
     public void openHomePage(){
         System.out.println("Opening home page");
         Selenide.open(getFromProperties("homeUrl"));
+        WebDriverRunner.getWebDriver().manage().window().maximize();
     }
 
     public String getFromProperties(String propertyKey) {
