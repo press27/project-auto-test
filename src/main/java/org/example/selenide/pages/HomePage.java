@@ -1,11 +1,14 @@
 package org.example.selenide.pages;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Selenide.$x;
 
 public class HomePage {
 
     String linkPattern = "//h3//a[text()='%s']";
 
+    @Step("Переход по ссылке {targetLinks.linkValue}")
     public void getTestDirectory(Links targetLinks){
         $x(String.format(linkPattern, targetLinks.linkValue)).click();
     }
@@ -18,7 +21,6 @@ public class HomePage {
         ALERTS("Alerts"),
         FILE_UPLOAD("File Upload"),
         CLASS_ATTRIBUTE("Class Attribute");
-
 
         final String linkValue;
 

@@ -1,9 +1,11 @@
 package org.example.listener;
 
-import org.testng.ITestListener;
-import org.testng.ITestResult;
+import com.codeborne.selenide.WebDriverRunner;
+import org.testng.*;
 
-public class TestListener implements ITestListener {
+import static org.example.selenide.tests.BaseTest.takeScreenshot;
+
+public class TestListener implements ITestListener, IInvokedMethodListener {
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -18,5 +20,20 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         System.out.println("Test Failure");
+    }
+
+    @Override
+    public void afterInvocation(IInvokedMethod method, ITestResult testResult, ITestContext context) {
+        if(method.isConfigurationMethod() || method.isTestMethod()){
+            int status = testResult.getStatus();
+            if(status != 1 && status != 3 && WebDriverRunner.hasWebDriverStarted()){
+                try {
+                    takeScreenshot();
+                } catch (Exception ex){
+                    ex.printStackTrace();
+                    System.out.println("Не удалось сделать screenshot");
+                }
+            }
+        }
     }
 }

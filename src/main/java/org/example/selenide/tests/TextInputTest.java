@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class TextInputTest extends BaseTest {
 
-    @Test
+    @Test(description = "Тестирование поля ввода")
     public void testTextInput(){
         homePage.getTestDirectory(HomePage.Links.TEXT_INPUT);
         String startButtonValue = textInputPage.getTextFromButton();
@@ -14,7 +14,8 @@ public class TextInputTest extends BaseTest {
         String expectedText = textInputPage.setText("HelloWorld");
         String actualText = textInputPage.getTextFromButton();
 
-        Assert.assertEquals(actualText, expectedText);
+        //Assert.assertEquals(actualText, expectedText);
+        Assert.assertEquals(actualText, "FAIL");
         Assert.assertNotEquals(actualText, startButtonValue);
     }
 
