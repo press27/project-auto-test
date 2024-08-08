@@ -19,16 +19,7 @@ public abstract class BaseTest {
     protected FramesPage framesPage = new FramesPage();
     protected AlertsPage alertsPage = new AlertsPage();
     protected FileUploadPage fileUploadPage = new FileUploadPage();
-
-    private void setUp(){
-        //if(!Configuration.webdriverLogsEnabled){
-            Configuration.browser = "chrome";
-            //Configuration.webdriverLogsEnabled = true;
-            //Configuration.browserSize = "1920x1080";
-            Configuration.headless = false;
-            //Selenide.open(getFromProperties("homeUrl"));
-        //}
-    }
+    protected ClassAttributePage classAttributePage = new ClassAttributePage();
 
     @BeforeSuite
     public void init(){
@@ -36,17 +27,16 @@ public abstract class BaseTest {
         setUp();
     }
 
-//    @AfterSuite
-//    public void tearDown(){
-//        System.out.println("tearDown");
-//        Selenide.closeWebDriver();
-//    }
-
     @BeforeTest
     public void openHomePage(){
         System.out.println("Opening home page");
         Selenide.open(getFromProperties("homeUrl"));
         WebDriverRunner.getWebDriver().manage().window().maximize();
+    }
+
+    private void setUp(){
+        Configuration.browser = "chrome";
+        Configuration.headless = false;
     }
 
     public String getFromProperties(String propertyKey) {

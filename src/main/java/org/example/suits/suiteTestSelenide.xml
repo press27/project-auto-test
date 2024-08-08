@@ -25,6 +25,12 @@
         </classes>
     </test>
 
+    <test name="class-attribute">
+        <classes>
+            <class name="org.example.selenide.tests.ClassAttributeTest"/>
+        </classes>
+    </test>
+
     <test name="frames">
         <classes>
             <class name="org.example.selenide.tests.FramesTest"/>

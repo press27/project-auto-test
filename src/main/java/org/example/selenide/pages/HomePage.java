@@ -16,7 +16,8 @@ public class HomePage {
         DYNAMIC_TABLE("Dynamic Table"),
         MOUSE_OVER("Mouse Over"),
         ALERTS("Alerts"),
-        FILE_UPLOAD("File Upload");
+        FILE_UPLOAD("File Upload"),
+        CLASS_ATTRIBUTE("Class Attribute");
 
 
         final String linkValue;
